@@ -1,0 +1,159 @@
+.menu-accessibility{
+    position: absolute;
+    top: -100px;
+    z-index: 99;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, .95);
+    width: 100%;
+    ul {
+        li {
+            display: inline-block;
+            a{
+                color: #000;
+                font-weight: bold;
+                &:focus,:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+    &--animated{
+        animation: moveInBottom .5s ease-out .75s;
+    }
+    &:focus-within,
+    &:focus{
+        top: 0;
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.contrast .navbar-brand img {
+    //background-color: white !important;
+    //filter: invert(1) !important;
+    filter: brightness(10) !important;
+}
+
+.contrast,
+.contrast div,
+.contrast li,
+.contrast nav,
+.contrast ol,
+.contrast header,
+.contrast footer,
+.contrast section,
+.contrast main,
+.contrast aside,
+.contrast article,
+.contrast .badge {
+    background: black !important;
+    color: white !important;
+    &::before,
+    &::after{
+        content: unset !important;
+    }
+}
+
+.contrast nav a{
+    color: #1aebff !important;
+}
+
+.contrast svg path,
+.contrast svg,
+.contrast svg g g {
+    //fill: white !important;
+    //stroke: white !important;
+    filter: brightness(10) !important;
+}
+
+/* .contrast nav svg path,
+.contrast nav svg,
+.contrast nav svg g g {
+    //fill: white !important;
+    //stroke: white !important;
+    filter: brightness(10) !important;
+} */
+
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+.contrast p,
+.contrast label,
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast i,
+.contrast b,
+.contrast u,
+.contrast a,
+.contrast time,
+.contrast span {
+    color: white !important;
+    //filter: brightness(10) !important;
+}
+
+
+.contrast a.button,
+.contrast a.btn{
+    color: white !important;
+    background: #000 !important;
+    &:hover{
+        color: white !important;
+        background: #000 !important;
+    }
+}
+
+.contrast button,
+.contrast input[type=button],
+.contrast input[type=reset],
+.contrast input[type=submit] {
+    background: black !important;
+    color: yellow !important;
+    border: none !important;
+}
+
+.contrast img.on-contrast-force-gray {
+    filter: grayscale(100%) contrast(120%);
+}
+
+.contrast img.on-contrast-force-white {
+    filter: brightness(0) invert(1);
+}
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+    background: black !important;
+    border: 1px solid white !important;
+    color: white !important;
+}
+
+
+.contrast img{
+    filter: grayscale(100%) contrast(120%);
+}

@@ -1,0 +1,46 @@
+/* Largura da tela de edição de taxonomia */
+.wp-admin #edittag {
+  max-width: unset;
+}
+
+/* .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4, .editor-styles-wrapper p, .editor-styles-wrapper ul, .editor-styles-wrapper blockquote, .editor-styles-wrapper .block-episodio-minidoc, .editor-styles-wrapper .carousel,  .editor-styles-wrapper .btn {
+  max-width: 728px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.editor-styles-wrapper figure {
+  max-width: 916px !important;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.editor-styles-wrapper img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+} */
+
+.postbox.acf-postbox .postbox-header {
+  background-color: rgba(var(--wp-admin-theme-color--rgb),.08);
+}
+
+
+/* .editor-styles-wrapper .wp-block-gallery.blocks-gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px !important;
+  justify-content: center;
+}
+
+.editor-styles-wrapper .wp-block-gallery.blocks-gallery-grid .blocks-gallery-item {
+  width: 100%;
+  height: auto;
+} */
+
+/* Incluir sombra no bloco de colunas do Gutenberg */
+.wp-block-columns {
+  border: 1px solid #e5e5e5;
+  box-shadow: 10px 12px 16px 0 rgba(0, 0, 0, .2);
+}

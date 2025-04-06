@@ -1,0 +1,46 @@
+body{
+    font-family: var(--font-family-primary);
+    //font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased ;
+    appearance: none;
+    position: relative;
+    background-color: var(--color-neutral-white);
+
+    //custom scroll bar for elements with overflow
+    /* width */
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: var(--color-neutral-medium);
+        border-radius: 0;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-brand-primary-pure);
+        border-radius: 0;
+    }
+}
+
+svg{
+    pointer-events: none;
+}
+
+a {
+    color: inherit;
+}
+
+/* .container {
+    max-width: 1920px;
+    padding-left: var(--spacing-xxxl);
+    padding-right: var(--spacing-xxxl);
+    @media (max-width: 991px){
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+} */

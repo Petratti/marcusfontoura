@@ -1,0 +1,69 @@
+.single.post-template-default {
+    main {
+        #hero {
+            background: var(--color-brand-primary-dark);
+            padding-top: var(--spacing-huge);
+            padding-bottom: var(--spacing-xxxl);
+            position: relative;
+            @media (max-width: 767px){
+                padding-top: var(--spacing-jumbo);
+                padding-bottom: var(--spacing-xxxl);
+            }
+            header {
+                margin-bottom: 0;
+                .badge {
+                    @include overline_02();
+                    color: var(--color-brand-secondary-pure);
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: var(--spacing-lg);
+                    width: 100%;
+                    margin-bottom: var(--spacing-xxl);
+                    @media (max-width: 767px){
+                        flex-direction: column;
+                        align-items: flex-start;
+                        //justify-content: center;
+                    }
+                    @media (max-width: 991px){
+                    }
+                }
+                h1 {
+                    @include headline-default_01();
+                    color: var(--color-brand-primary-pure);
+                    margin-bottom: var(--spacing-lg);
+                    max-width: 1022px;
+                    @media (max-width: 991px){
+                    }
+                }
+            }
+        }
+        #imagem-destaque {
+            background: var(--color-brand-primary-soft);
+            padding-top: 0;
+            padding-bottom: 0;
+            position: relative;
+            img {
+                width: 100%;
+                height: auto;
+            }
+            @media (max-width: 767px) {
+                .container {
+                    padding: 0;
+                }
+                img {
+                    width: 100%;
+                    height: 231px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+        #content {
+            //background: var(--color-neutral-white);
+            //padding-top: var(--spacing-huge);
+            //padding-bottom: var(--spacing-huge);
+        }
+    }
+}

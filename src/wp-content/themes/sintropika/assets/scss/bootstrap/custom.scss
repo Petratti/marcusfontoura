@@ -1,0 +1,36 @@
+ /* https://getbootstrap.com/docs/5.0/customize/sass/ */
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "scss/variables";
+@import "scss/maps";
+@import "scss/utilities";
+@import "scss/bootstrap";
+
+@import "scss/mixins";
+
+// 4. Include any optional Bootstrap components as you like
+@import "scss/root";
+@import "scss/reboot";
+@import "scss/type";
+@import "scss/images";
+@import "scss/containers";
+@import "scss/grid";
+@import "scss/nav";
+@import "scss/navbar";
+@import "scss/tooltip";
+@import "scss/popover";
+@import "scss/breadcrumb";
+@import "scss/pagination";
+@import "scss/forms";
+@import "scss/buttons";
+@import "scss/tables";
+@import "scss/accordion";
+@import "scss/badge";
+@import "scss/dropdown";
+@import "scss/modal";
+@import "scss/placeholders";
+

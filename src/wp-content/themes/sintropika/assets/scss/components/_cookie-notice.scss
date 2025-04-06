@@ -1,0 +1,26 @@
+#cookie-notice {
+    .cookie-notice-container {
+        background: rgba(0, 0, 0, 0.8);
+        #cn-notice-text {
+            font-family: var(--font-family-secondary);
+            font-size: var(--font-size-xxs);
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-default);
+            color: var(--color-neutral-white);
+        }
+        #cn-notice-buttons {
+            .cn-button {
+                font-family: var(--font-family-secondary);
+            }
+        }
+        #cn-close-notice {
+            opacity: .7;
+            &::before {
+                background-color: var(--color-brand-primary-pure);
+            }
+            &::after {
+                background-color: var(--color-brand-primary-pure);
+            }
+        }
+    }
+}

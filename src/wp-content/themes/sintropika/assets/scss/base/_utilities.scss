@@ -1,0 +1,10 @@
+.alert{
+    &.alert-danger{
+        background-color: var(--color-neutral-white);
+        color: var(--color-red);
+        border: 1px solid var(--color-red);
+    }
+    ul {
+        margin-bottom: 0;
+    }
+}

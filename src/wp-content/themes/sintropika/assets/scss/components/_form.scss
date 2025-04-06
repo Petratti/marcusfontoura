@@ -1,0 +1,77 @@
+.form-search {
+    position: relative;
+    i {
+        position: absolute;
+        left: var(--spacing-lg);
+        top: var(--spacing-lg);
+        width: 32px;
+        height: 32px;
+        align-content: center;
+        flex-shrink: 0;
+        @media (max-width: 991px){
+            left: var(--spacing-md);
+            top: var(--spacing-md);
+        }
+        svg{
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    input {
+        @include body-default_01;
+        color: var(--color-neutral-low-light);
+        display: flex;
+        height: 80px;
+        padding: var(--spacing-md) var(--spacing-huge) var(--spacing-md) var(--spacing-giant);
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border: var(--border-width-small) solid var(--color-neutral-light);
+        background: var(--color-neutral-white);
+        box-shadow: var(--shadow-soft);
+        @media (max-width: 991px){
+            height: 62px;
+            padding: var(--spacing-sm) var(--spacing-giant) var(--spacing-sm) 56px;
+        }
+    }
+    button {
+        position: absolute;
+        right: var(--spacing-md);
+        top: var(--spacing-md);
+        @media (max-width: 991px){
+            border-style: inset;
+            font-size: var(--font-size-xxs) !important;
+            height: 38px;
+            top: var(--spacing-sm);
+            right: var(--spacing-sm);
+            padding: var(--spacing-sm) !important;
+        }
+    }
+}
+
+select.-select-order {
+    //@include button-text;
+    //@include btn-text-in-light;
+    text-align: end;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTYgOUwxMiAxNUwxOCA5IiBzdHJva2U9IiM4MzAwNzEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPg==");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 24px 24px;
+    border: none;
+    padding: 0 24px 0 0;
+    //color: var(--color-neutral-black);
+}
+
+
+form {
+    .form-field-input {
+        @include form-field-in-light;
+    }
+    .form-field-select {
+        @include form-field-in-light;
+    }
+    .fom-check {
+        @include form-action-selection;
+    }
+}

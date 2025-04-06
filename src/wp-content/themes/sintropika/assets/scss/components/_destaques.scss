@@ -1,0 +1,20 @@
+.-destaque-abertura {
+    margin-bottom: var(--spacing-xxl);
+    header {
+        padding-left: var(--spacing-lg);
+        border-left: var(--border-width-medium) solid var(--color-neutral-black);
+        h2 {
+            @include headline-default_01;
+            color: var(--color-neutral-black);
+            margin-bottom: var(--spacing-md);
+        }
+        p {
+            @include body-default_01;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.-destaque-espacamento {
+    height: var(--spacing-huge);
+}

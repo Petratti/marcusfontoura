@@ -1,0 +1,32 @@
+.page.page-template-page-books{
+    main {
+        #hero {
+            background: var(--color-brand-primary-dark);
+            padding-top: var(--spacing-giant);
+            padding-bottom: var(--spacing-giant);
+            header {
+                h1 {
+                    @include headline-default_01();
+                    color: var(--color-neutral-soft);
+                    margin-bottom: var(--spacing-giant);
+                    @media (max-width: 991px){
+                        margin-bottom: var(--spacing-xxxl);
+                    }
+                }
+                p {
+                    @include body-default_01();
+                    color: var(--color-neutral-soft);
+                    margin-bottom: 0;
+                    @media (max-width: 991px){
+                        margin-bottom: var(--spacing-lg);
+                    }
+                }
+            }
+        }
+        #content {
+            background: var(--color-neutral-white);
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
