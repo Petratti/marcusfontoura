@@ -89,8 +89,33 @@
                         }
                     }
                 }
+                .btn.-social{
+                    padding: 0;
+                    i {
+                        width: 24px;
+                        height: 24px;
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            path {
+                                fill: var(--color-brand-secondary-light);
+                            }
+                        }
+                    }
+                    &:hover,
+                    &:focus-visible {
+                        i {
+                            svg{
+                                path {
+                                    fill: var(--color-neutral-white) !important;
+                                }
+                            }
+                        }
+                    }
+                }
                 //caso a última coluna seja diferente
-                /* &:last-of-type {
+                &:last-of-type {
+                    flex-grow: 0;
                     ul{
                         li {
                             margin-bottom: var(--spacing-md);
@@ -106,7 +131,7 @@
                             }
                         }
                     }
-                } */
+                }
             }
         }
     }
