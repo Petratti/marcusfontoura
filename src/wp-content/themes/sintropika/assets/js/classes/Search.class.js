@@ -16,7 +16,6 @@ class Search {
         this.hide_number_of_results();
         this.populate_filters();
         let taxonomy = this.taxonomy();
-        
         let term = this.term();
         let page = this.page();
         let order = this.order_by();
@@ -137,7 +136,16 @@ class Search {
                     
                     var input = $('#formsearch-posts').find('input[name="'+taxonomy+'"]');
                     
-                    $('[data-busca="filtro"][data-typename="'+taxonomy+'"][value="'+term+'"]').prop('checked', true);
+                    var inputElement = $('[data-busca="filtro"][data-typename="'+taxonomy+'"][value="'+term+'"]');
+                    inputElement.prop('checked', true);
+                    var parentBlock = inputElement.closest('.d-none');
+                    if (parentBlock.length > 0) {
+                        
+                        
+                        parentBlock.removeClass('d-none');
+                        $('#busca-category-'+inputElement.data('category')).prop('checked', true);
+                        $('#busca-category-'+inputElement.data('category')).prop('checked', true);
+                    }
                     if(input.length > 0){
                         input.val(terms.join(','));
                     }else{
@@ -223,13 +231,15 @@ class Search {
 
     static taxonomy(){
         this.add_to_queue('taxonomy');
+        let hierarchy = Search.hierarchy_filters();
+        //console.log(hierarchy);
         //console.log('check_filters');
         filters = {};
         blocks = this.blocks;
     
-        //se for a página de blog
-        if($('body').hasClass('page-template-page-blog')){
-            var modal = $('#modalBuscaBlog');
+        //se for a página de conteudos
+        if($('body').hasClass('page-template-page-conteudos')){
+            var modal = $('#modalBusca');
         }else{
             var modal = $('#modalBusca');
         }
@@ -247,16 +257,37 @@ class Search {
             if (!filters[origem]) {
                 filters[origem] = [];
             }
-    
+         
             //Verifica se o termo já não está no array
             if(filters[origem].indexOf(term) == -1){
                 filters[origem].push(term);
                 //pega o valor inteiro do blocks e incrementa 1
                 blocks[block] = (blocks[block] || 0) + 1;
             }
+            
             //console.log(filters);
-            $("#search-results-filters-itens").append('<button class="btn button-text-icon-simple" data-id="'+id+'">'+text+'<i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6H5M5 6H21M5 6L5 20C5 20.5304 5.21071 21.0391 5.58579 21.4142C5.96086 21.7893 6.46957 22 7 22H17C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20V6M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M10 11V17M14 11V17" stroke="#830071" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/></svg></i></button>');
+            $("#search-results-filters-itens").append('<button class="btn button-tag-small" data-id="'+id+'">'+text+'<i><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="#BFBEB7" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg></i></button>');
         
+        });
+
+        //Percorrer filters e enquanto percorre verificar no array de hierarchy um valor que seja um index do array e se for verificar se tem algum filho e se tiver remover o pai do array filters
+        $.each(filters, function(key, categorias){
+            //enquanto percorre filters verificar se esse valor é um index do array hierarchy
+            $.each(categorias, function(i, value){
+                //verificar se existe o valor no array hierarchy
+                if(hierarchy[value] && hierarchy[value].length > 0){
+                    //verificar se existe o valor no array filters
+                    if(filters[key].indexOf(value) != -1) {
+                        //verificar se o valor tem filhos no hierarchy
+                        const hasChildren = hierarchy[value].some(child => filters[key].includes(child));
+                        if (hasChildren) {
+                            //remover o valor do array filters
+                            filters[key].splice(i, 1);
+                            //console.log('remover', value);
+                        }
+                    }
+                }
+            });
         });
        
         this.view_update_count_filters_modal();
@@ -267,8 +298,8 @@ class Search {
         this.add_to_queue('action');
         var action = '';
         if(this.type != 'simples'){
-            if($('body').hasClass('page-template-page-blog')){
-                action = 'search_blog';
+            if($('body').hasClass('page-template-page-conteudos')){
+                action = 'search_conteudos';
             }
         }else{
             action = 'search';
@@ -303,9 +334,7 @@ class Search {
                 }
     
                 //Se o tipo for Simples, transforma o parametro search em s
-                if(key == 'search'){
-                    key = 's';
-                }
+               
     
                 if (typeof value === 'object') {
                     // Converte o objeto em uma string JSON
@@ -375,20 +404,20 @@ class Search {
             total_de_filtros += quantidade;
         });
         
-        $('.total-de-filtros').html(total_de_filtros);
+        $('.total-de-filtros').html("("+total_de_filtros+")");
         $('#search-results-clear-filters-number').html(total_de_filtros);
         if(total_de_filtros > 0){
-            //$('.total-de-filtros').removeClass('d-none');
+            $('.total-de-filtros').removeClass('d-none');
             //$('.btn-filter i').addClass('d-none');
             $('#search-results header').addClass('has-filter');
-            $('#search-results-filters').removeClass('d-none');
+            //$('#search-results-filters').removeClass('d-none');
             $('#search-results-clear-filters').removeClass('invisible');
             $('#destaques').addClass('d-none');
         }else{
-            //$('.total-de-filtros').addClass('d-none');
+            $('.total-de-filtros').addClass('d-none');
             //$('.btn-filter i').removeClass('d-none');
             $('#search-results header').removeClass('has-filter');
-            $('#search-results-filters').addClass('d-none');
+            //$('#search-results-filters').addClass('d-none');
             $('#search-results-clear-filters').addClass('invisible');
             $('#destaques').removeClass('d-none');
         }
@@ -439,13 +468,13 @@ class Search {
 
     // O parâmetro 'view' determina se os cartões serão exibidos ou removidos
     static view_placeholder_cards(view = false) {
-    this.add_to_queue('view_placeholder_cards');
-    // Se 'view' for verdadeiro, remove a classe 'd-none' dos elementos com a classe 'placeholder-card-js'
-    if (view) {
-        $('.after-placeholder-card-js').removeClass('d-none');
-    } else {
-        $('.after-placeholder-card-js').addClass('d-none');
-    }
+        this.add_to_queue('view_placeholder_cards');
+        // Se 'view' for verdadeiro, remove a classe 'd-none' dos elementos com a classe 'placeholder-card-js'
+        if (view) {
+            $('.after-placeholder-card-js').removeClass('d-none');
+        } else {
+            $('.after-placeholder-card-js').addClass('d-none');
+        }
     }
 
     //Define o comportamento do termo que aparece para a quantidade de resultados, caso alguma taxonomia importante for selecionada
@@ -458,11 +487,11 @@ class Search {
         if(this.blocks[this.taxonomiaPrincipal] == 1){
             //pegar o termo da categoria principal
             var term = $('[data-busca="filtro"][data-typename="'+this.taxonomiaPrincipal+'"]:checked').parent().find('label').text();
-            //console.log(term);
+            console.log(term);
             resultado = term;
             number = '(' + numero + ')';
         }else{
-            resultado = (numero == 1) ? 'Resultados encontrados' : 'Resultados encontrados';
+            resultado = (numero == 1) ? 'Resultados' : 'Resultados';
             number = '(' + numero + ')';
         }
         
@@ -513,7 +542,7 @@ class Search {
                 self.view_placeholder_cards(true);
             },
             success: function(response) {
-                //console.log(response);
+                console.log(response);
                 // Quando a requisição for bem-sucedida
                 self.view_loader(false); // Oculta o carregador
 
@@ -583,11 +612,39 @@ class Search {
                     }
                 }
 
+                
 
             },
             complete: function() {
                 $('.before-placeholder-card-js').addClass('d-none');
                 $('.after-placeholder-card-js').addClass('d-none');
+                var cards = (self.type == 'free') ? $("#search-results-free-cards") : $('#search-results-cards');
+                //console.log(cards);
+
+                //checar se mansory já existe
+                if(cards.data('masonry')){
+                    //se existir, destruir
+                    cards.masonry('destroy');
+                    //cards.removeData('masonry'); // This line to remove masonry's data
+                }
+                // Initialize masonry again
+                cards.masonry({
+                    itemSelector: '.card-content-js',
+                    //columnWidth: 340,
+                });
+
+                //contar a quantidade de cards paraincluir a linha entre as colunas
+                var total = cards.children('.card-content-js').length;
+                cards.removeClass('duas-colunas');
+                cards.removeClass('tres-colunas');
+                if(total >= 2){
+                    cards.addClass('duas-colunas');
+                }
+                if(total >= 3){
+                    cards.addClass('tres-colunas');
+                }
+                
+
             },error: function(response) {
                 //console.log(response);
                 // Em caso de erro, exibe uma mensagem de erro
@@ -603,7 +660,7 @@ class Search {
 
     static get_queue(){
         //Função que retorna a fila de funções
-        console.log(this.queue);
+        //console.log(this.queue);
     }
 
     static view_update_filters_modal(){
@@ -611,6 +668,24 @@ class Search {
         var taxonomias = {};
         var taxonomias = this.taxonomy();
         this.search_for_url(taxonomias);
+    }
+
+    static hierarchy_filters(){
+        //Percorrer todos os inputs que contenham a data-busca="filtro" e criar um array e todos que conteiverem o mesmo data-category colocar no mesmo indice
+        var hierarchy = {};
+        $('[data-busca="filtro"]').each(function(){
+            var categoria = $(this).data('category');
+            var slug = $(this).val();
+            if(!hierarchy[categoria]){
+                hierarchy[categoria] = [];
+            }
+            hierarchy[categoria].push(slug);
+        });
+
+        //remover o indice undefined do array
+        delete hierarchy['undefined'];
+
+        return hierarchy;
     }
 
     

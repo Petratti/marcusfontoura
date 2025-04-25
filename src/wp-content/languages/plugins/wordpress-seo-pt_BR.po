@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-03-20 15:28:10+0000\n"
+"PO-Revision-Date: 2025-04-21 09:20:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr "Número de links internos que levam a esta postagem."
 msgid "Number of outgoing internal links in this post."
 msgstr "Número de links internos de saída nesta postagem."
 
-#: inc/class-wpseo-rank.php:223 js/dist/general-page.js:34
+#: inc/class-wpseo-rank.php:223 js/dist/general-page.js:38
 msgid "Not analyzed"
 msgstr "Não analisado"
 
@@ -3153,7 +3153,7 @@ msgstr "Análise da legibilidade"
 #: js/dist/block-editor.js:540 js/dist/editor-modules.js:315
 #: js/dist/elementor.js:94 js/dist/externals-components.js:188
 #: js/dist/externals/analysis.js:11 js/dist/frontend-inspector-resources.js:1
-#: js/dist/general-page.js:34 js/dist/post-edit.js:25 js/dist/term-edit.js:1
+#: js/dist/general-page.js:38 js/dist/post-edit.js:25 js/dist/term-edit.js:1
 msgid "Needs improvement"
 msgstr "Precisa melhorar"
 
@@ -3411,7 +3411,7 @@ msgstr "Erro 404: Página não encontrada"
 #: js/dist/block-editor.js:540 js/dist/editor-modules.js:315
 #: js/dist/elementor.js:94 js/dist/externals-components.js:188
 #: js/dist/externals/analysis.js:11 js/dist/frontend-inspector-resources.js:1
-#: js/dist/general-page.js:34 js/dist/post-edit.js:25 js/dist/term-edit.js:1
+#: js/dist/general-page.js:38 js/dist/post-edit.js:25 js/dist/term-edit.js:1
 msgid "Good"
 msgstr "Bom"
 
@@ -3874,7 +3874,7 @@ msgstr "Você instalou %1$s e %2$s, e ambos criam dados Open Graph que podem faz
 #: inc/class-wpseo-rank.php:213 js/dist/block-editor.js:540
 #: js/dist/editor-modules.js:315 js/dist/elementor.js:94
 #: js/dist/externals-components.js:188 js/dist/externals/analysis.js:11
-#: js/dist/frontend-inspector-resources.js:1 js/dist/general-page.js:34
+#: js/dist/frontend-inspector-resources.js:1 js/dist/general-page.js:38
 #: js/dist/post-edit.js:25 js/dist/term-edit.js:1
 msgid "OK"
 msgstr "OK"
@@ -3998,7 +3998,7 @@ msgstr "Título da página WP"
 
 #: admin/class-bulk-editor-list-table.php:866 js/dist/block-editor.js:149
 #: js/dist/classic-editor.js:134 js/dist/editor-modules.js:270
-#: js/dist/elementor.js:489 js/dist/general-page.js:34
+#: js/dist/elementor.js:489 js/dist/general-page.js:38
 #: js/dist/wincher-dashboard-widget.js:43
 #: js/dist/wincher-dashboard-widget.js:112
 msgid "View"

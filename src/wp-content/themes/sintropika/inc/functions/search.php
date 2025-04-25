@@ -4,10 +4,10 @@
 require_once get_template_directory() . '/inc/classes/search.class.php';
 //BUSCA POSTS
 
-add_action('wp_ajax_nopriv_search_blog', 'search_blog');
-add_action('wp_ajax_search_blog', 'search_blog');
+add_action('wp_ajax_nopriv_search_conteudos', 'search_conteudos');
+add_action('wp_ajax_search_conteudos', 'search_conteudos');
 
-function search_blog() {
+function search_conteudos() {
     
     //Parametros de busca
     $search = $_POST['search'];
@@ -34,6 +34,7 @@ function search_blog() {
         $numero_de_resultado = $search_instance->get_numero_de_resultados();
         $numero_de_paginas = $search_instance->get_numero_de_paginas();
         $carregar_mais = $search_instance->get_carregar_mais();
+        $args = $search_instance->get_args();
 
         $retorno = array();
         $retorno['search'] = $search;
@@ -46,6 +47,7 @@ function search_blog() {
         $retorno['origem'] = 'posts';
         $retorno['numero_de_paginas'] = $numero_de_paginas;
         $retorno['livre'] = 'true';
+        $retorno['args'] = $args;
 
 
 
@@ -97,6 +99,7 @@ function search() {
         $numero_de_resultado = $search_instance->get_numero_de_resultados();
         $numero_de_paginas = $search_instance->get_numero_de_paginas();
         $carregar_mais = $search_instance->get_carregar_mais();
+        $args = $search_instance->get_args();
 
         $retorno = array();
         $retorno['search'] = $search;
@@ -107,6 +110,7 @@ function search() {
         $retorno['paged'] = $paged + 1;
         $retorno['filtros'] = $filtros;
         $retorno['origem'] = 'search';
+        $retorno['args'] = $args;
         $retorno['numero_de_paginas'] = $numero_de_paginas;
 
         echo json_encode($retorno);

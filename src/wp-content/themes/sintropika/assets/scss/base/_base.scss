@@ -27,6 +27,16 @@ body{
     }
 }
 
+:focus-visible {
+    outline: none;
+}
+
+.btn:focus-visible, .nav-link:focus-visible, form input:focus-visible {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 .1rem rgba(0, 0, 155, .05);
+    box-shadow: 0 0 0 .1rem rgba(0, 0, 155, .05);
+}
+
 svg{
     pointer-events: none;
 }

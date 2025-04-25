@@ -2,7 +2,11 @@
     transition: 0.5s ease-out all;
     width: fit-content;
     height: fit-content;
-    border-radius: none;
+    border-radius: 0 !important;
+
+    &:active {
+        border-color: transparent !important;
+    }
 
     i {
         transition: 0.5s ease-out all;
@@ -13,7 +17,7 @@
 
     &.button-ghost {
         @include button_01();
-        background: var(--color-neutral-white);
+        background: transparent;
         border: var(--border-width-small) solid var(--color-neutral-medium);
         color: var(--color-neutral-black);
         padding: var(--spacing-lg) var(--spacing-xl);
@@ -81,13 +85,13 @@
         }
         &:hover,
         &:focus-visible {
-            background: var(--color-brand-primary-pure);
-            border: var(--border-width-small) solid var(--color-brand-primary-pure);
-            color: var(--color-neutral-white);
+            background: var(--color-brand-secondary-pure);
+            border: var(--border-width-small) solid var(--color-brand-secondary-pure);
+            color: var(--color-neutral-black);
             i {
                 svg{
                     path {
-                        stroke: var(--color-neutral-white) !important;
+                        stroke: var(--color-neutral-black) !important;
                     }
                 }
             }
@@ -220,18 +224,58 @@
         justify-content: center;
         align-items: center;
         gap: var(--spacing-xxs);
+        border: none;
+        &:hover,
+        &:focus-visible {
+            border: none;
+            color: var(--color-brand-primary-pure);
+        }
+    }
+
+    &.button-text-alternative {
+        @include button_02();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-xxs);
+        color: var(--color-neutral-white);
+        border: none;
+        &:hover,
+        &:focus-visible {
+            border: none;
+        }
     }
 
     &.button-tag-big {
         @include button_03();
+        display: flex;
+        padding: var(--spacing-sm) var(--spacing-md) !important;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing-xxs);
+        border-radius: var(--border-radius-pill) !important;
+        border: var(--border-width-small) solid var(--color-neutral-medium);
+        &:hover,
+        &:focus-visible {
+            background: var(--color-neutral-black) !important;
+            color: var(--color-neutral-white) !important;
+        }
     }
 
     &.button-tag-small {
         @include body-default_03();
         display: flex;
+        padding: var(--spacing-xxxs) var(--spacing-xs) var(--spacing-xxxs) var(--spacing-sm) !important;
         justify-content: center;
         align-items: center;
         gap: var(--spacing-xxs);
+        border-radius: var(--border-radius-pill) !important;
+        border: var(--border-width-small) solid var(--color-neutral-light);
+        &:hover,
+        &:focus-visible {
+            background: var(--color-neutral-black) !important;
+            color: var(--color-neutral-white) !important;
+        }
     }
 
     &.button-drop {
@@ -277,8 +321,8 @@
         }
         &:hover,
         &:focus-visible {
-            background: var(--color-brand-primary-pure);
-            border: var(--border-width-small) solid var(--color-brand-primary-pure);
+            background: var(--color-brand-primary-pure) !important;
+            border: var(--border-width-small) solid var(--color-brand-primary-pure) !important;
             color: var(--color-neutral-white);
             i {
                 svg{

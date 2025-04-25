@@ -26,8 +26,9 @@
         <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri(); ?>/dist/style.min.css?v=<?=THEME_VERSION?>">
         <script src="<?= get_template_directory_uri(); ?>/dist/app.min.js?v=<?=THEME_VERSION?>"></script>
         <script src="<?= get_template_directory_uri(); ?>/dist/menu.min.js?v=<?=THEME_VERSION?>"></script>
-        <!-- <script src="<?= get_template_directory_uri(); ?>/assets/js/classes/Search.class.js?v=<?=THEME_VERSION?>"></script>
-        <script src="<?= get_template_directory_uri(); ?>/dist/buscas.min.js?v=<?=THEME_VERSION?>"></script> -->
+        <script src="<?= get_template_directory_uri(); ?>/assets/js/classes/Search.class.js?v=<?=THEME_VERSION?>"></script>
+        <script src="<?= get_template_directory_uri(); ?>/dist/buscas.min.js?v=<?=THEME_VERSION?>"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class();?>>

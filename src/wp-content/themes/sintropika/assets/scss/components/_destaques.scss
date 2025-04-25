@@ -1,20 +1,73 @@
 .-destaque-abertura {
     margin-bottom: var(--spacing-xxl);
     header {
-        padding-left: var(--spacing-lg);
-        border-left: var(--border-width-medium) solid var(--color-neutral-black);
+        //padding-top: var(--spacing-xxl);
+        //border-top: var(--border-width-medium) solid var(--color-neutral-black);
+        padding-left: 0;
+        border-left: 0;
         h2 {
-            @include headline-default_01;
+            @include headline-default_02();
             color: var(--color-neutral-black);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
         }
         p {
             @include body-default_01;
+            color: var(--color-neutral-deep);
             margin-bottom: 0;
+        }
+    }
+}
+
+.destaque-lateral {
+    margin-bottom: var(--spacing-xxl);
+    header {
+        padding-left: 0;
+        border-left: 0;
+        position: sticky;
+        top: 0;
+        margin-bottom: var(--spacing-xxl);
+        h2 {
+            @include headline-default_03();
+            color: var(--color-neutral-black);
+            margin-bottom: var(--spacing-xl);
+        }
+        p {
+            @include body-default_01;
+            color: var(--color-neutral-deep);
+            margin-bottom: var(--spacing-xl);
+        }
+    }
+    .-cards {
+        position: relative;
+        height: auto;
+        //min-height: 300px;
+        //background: var(--color-neutral-medium);
+        @media (min-width: 767px) {
+            .card-content-js {
+                padding-left: var(--spacing-lg);
+                padding-right: var(--spacing-lg);
+            }
+            &.duas-colunas {
+                &::before {
+                    content: '';
+                    width: 1px;
+                    height: 100%;
+                    background: var(--color-neutral-medium);
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                }
+            }
+            &::after {
+                display: none;
+            }
         }
     }
 }
 
 .-destaque-espacamento {
     height: var(--spacing-huge);
+    @media (max-width: 991px) {
+        height: var(--spacing-xxxl);
+    }
 }

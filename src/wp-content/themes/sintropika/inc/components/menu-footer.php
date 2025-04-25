@@ -6,10 +6,13 @@ $menuFooterTipo = 'linha';
 <div class="-menu-footer">
     <div class="container">
         <div class="row justify-content-center">
+            <!-- <div class="col-lg-6 -logo">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-footer.png" alt="Logotipo <?php bloginfo('name'); ?>">
+            </div> -->
             <div class="col-lg-8 -colunas">
                 <?php if (has_nav_menu('rodape_coluna_1')): ?>
                 <div class="-coluna">
-                    <!-- <h3>Coluna 1</h3> -->
+                    <!-- <h3>Mapa do site</h3> -->
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'rodape_coluna_1',

@@ -12,10 +12,10 @@
     /* TOKENS AVULSOS */
     --menu-height: 64px;
     --menu-height-mobile: 64px;
-    --logo-menu-width: 90px;
-    --logo-menu-height: 32px;
-    --logo-footer-width: 300px;
-    --logo-footer-height: 200px;
+    --logo-menu-width: 100px;
+    --logo-menu-height: 40px;
+    --logo-footer-width: 264px;
+    --logo-footer-height: 81px;
     --stroke-icon: 2px;
     
 
@@ -263,9 +263,9 @@
     --gradient-neutral-high_03: linear-gradient(0deg, var(--color-neutral-light) 0%, var(--color-neutral-soft) 100%);
     --gradient-neutral-high_04: linear-gradient(90deg, var(--color-neutral-light) 0%, var(--color-neutral-soft) 100%);
 
-    --gradient-neutral-low_01: linear-gradient(180deg, var(--color-neutrl-black) 0%, var(--color-neutrl-dark) 100%);
-    --gradient-neutral-low_02: linear-gradient(270deg, var(--color-neutrl-black) 0%, var(--color-neutrl-dark) 100%);
-    --gradient-neutral-low_03: linear-gradient(0deg, var(--color-neutrl-black) 0%, var(--color-neutrl-dark) 100%);
-    --gradient-neutral-low_04: linear-gradient(90deg, var(--color-neutrl-black) 0%, var(--color-neutrl-dark) 100%);
+    --gradient-neutral-low_01: linear-gradient(180deg, var(--color-neutral-black) 0%, var(--color-neutral-dark) 100%);
+    --gradient-neutral-low_02: linear-gradient(270deg, var(--color-neutral-black) 0%, var(--color-neutral-dark) 100%);
+    --gradient-neutral-low_03: linear-gradient(0deg, var(--color-neutral-black) 0%, var(--color-neutral-dark) 100%);
+    --gradient-neutral-low_04: linear-gradient(90deg, var(--color-neutral-black) 0%, var(--color-neutral-dark) 100%);
 
 }

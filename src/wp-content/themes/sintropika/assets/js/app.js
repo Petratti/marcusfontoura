@@ -7,6 +7,16 @@ $(window).on('load', function(){
 
 $(document).ready(function(){
 
+    $('#modalDefault').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var titulo = button.data('titulo');
+        var imagem = button.data('imagem');
+        var modal = $(this);
+        //alert(YouTubeGetID(video));
+        modal.find('.modal-title').text(titulo);
+        modal.find('.modal-body').html('<img src="'+imagem+'" class="img-fluid" alt="Imagem">');
+    });
+
 
     // ao abrir modal modalVideo, pegar data-video do botao e colocar no src do iframe
     $('#modalVideo').on('show.bs.modal', function (event) {
@@ -21,6 +31,29 @@ $(document).ready(function(){
     $('#modalVideo').on('hidden.bs.modal', function () {
         $(this).find('.modal-body iframe').removeAttr('src');
     });
+
+    //se a classe .-cards existir, inicializar o masonry
+    if($('.-cards').length){
+        var cards = $('.-cards');
+        //checar se mansory já existe
+        if(cards.data('masonry')){
+            //se existir, destruir
+            cards.masonry('destroy');
+            //cards.removeData('masonry'); // This line to remove masonry's data
+        }
+        // Initialize masonry again
+        cards.masonry({
+            itemSelector: '.card-content-js',
+            //columnWidth: 340,
+        });
+
+        //contar a quantidade de cards paraincluir a linha entre as colunas
+        var total = cards.children('.card-content-js').length;
+        cards.removeClass('duas-colunas');
+        if(total >= 2){
+            cards.addClass('duas-colunas');
+        }
+    }
     
 });
 

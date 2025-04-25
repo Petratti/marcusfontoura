@@ -71,5 +71,5 @@ require_once get_template_directory() . '/inc/functions/iframe.php';
 /**
  * Funções de busca por conteudos do site
  */
-//require get_template_directory(). '/inc/functions/search.php';
+require get_template_directory(). '/inc/functions/search.php';
 ?>

@@ -1,6 +1,6 @@
 //definir templates que passarão pelo script
 /* var templates = {
-    'page-template-page-blog':'search_blog'
+    'page-template-page-conteudos':'search_conteudos'
 }; */
 
 var taxonomies = {};
@@ -16,7 +16,7 @@ var taxonomiaPrincipal = 'category'; //define se o nome da taxonomia principal a
 $(document).ready(function(){
     
     //ao submeter o formulário
-    if($('body').hasClass('page-template-page-blog')){
+    if($('body').hasClass('page-template-page-conteudos')){
         
         // Inicializa a busca
         //se existir parâmetros de busca na URL executa a busca filtrada
@@ -64,6 +64,12 @@ $(document).ready(function(){
         $('#btn-mostrar-mais-posts').on('click',function(e) {
             // Previne o comportamento padrão do clique (navegação)
             e.preventDefault();
+            //define min-heigth do conteudo com base no height atual para corrigir funcionamento do masonry
+            var height = $('#search-results-cards').height();
+            if (height == 0) {
+                height = $('#search-results-cards').css('min-height');
+            }
+            $('#search-results-cards').css('min-height', height);
             // Chama a função de busca sem parâmetros adicionais
             search('filter');
         });
@@ -72,6 +78,12 @@ $(document).ready(function(){
         $('#btn-mostrar-mais-posts-livre').on('click',function(e) {
             // Previne o comportamento padrão do clique (navegação)
             e.preventDefault();
+            //define min-heigth do conteudo com base no height atual para corrigir funcionamento do masonry
+            var height = $('#search-results-free-cards').height();
+            if (height == 0) {
+                height = $('#search-results-free-cards').css('min-height');
+            }
+            $('#search-results-free-cards').css('min-height', height);
             // Chama a função de busca com o parâmetro 'livre'
             search('free');
         });
@@ -81,19 +93,22 @@ $(document).ready(function(){
             Search.view_update_filters_modal();
             e.preventDefault();
             search('filter',true, false); // Limpa os filtros e executa a busca novamente
-            $('#modalBuscaBlog').modal('hide'); //fecha o modal
+            $('#modalBusca').modal('hide'); //fecha o modal
         });
 
         // Adiciona um evento de clique ao botão Fechar do modal de filtros
         $('.-clear-filters-modal-js').on('click',function(e){
             e.preventDefault();
             search('free', true,true); // Limpa os filtros e executa a busca novamente
-            $('#modalBuscaBlog').modal('hide'); //fecha o modal
+            $('#modalBusca').modal('hide'); //fecha o modal
+            //retrair os blocos de categorias
+            $('.child').addClass('d-none');
         });
 
         $('#search-results-clear-filters').on('click',function(e){
             e.preventDefault();
             search('free',true,true);
+            $('.child').addClass('d-none');
         });
 
         $('#search-results-free-cards-orderby').on('change',function(e){
@@ -105,6 +120,58 @@ $(document).ready(function(){
             e.preventDefault();
             search('filter',true,false);
         });
+
+        /*Ao clicar nos botoes que contém a classe .busca-category verifica o value do botão e
+        adiciona display ao bloco-category correspondente*/
+        $('.busca-category').on('click',function(e){
+            //e.preventDefault();
+            var bloco = $(this).val();
+            if($('#bloco-'+bloco).hasClass('d-none')){
+                $('#bloco-'+bloco).removeClass('d-none');
+            }else{
+                
+                //Verifica os elementos filhos do bloco e se todos estão desmarcados fecha o bloco
+                var filhos = $('#bloco-'+bloco).find('.sub-category');
+                var todosDesmarcados = true;
+                filhos.each(function() {
+                    if ($(this).is(':checked')) {
+                        todosDesmarcados = false;
+                        return false; // Sai do loop se encontrar um checkbox marcado
+                    }
+                });
+                if (todosDesmarcados) {
+                    $('#bloco-'+bloco).addClass('d-none');
+                }
+
+
+            }
+        });
+
+        $('.sub-category').on('click',function(e){
+            //Verifica se o elemento atual foi checkado caso sim, ativa o elemento pai
+            if($(this).is(':checked')){
+                var categoria = $(this).data('category');
+                if(!$('#busca-category-'+categoria).is(':checked')){
+                    $('#busca-category-'+categoria).prop('checked', true);
+                }
+            }else{
+                var categoria = $(this).data('category');
+                var categoria_checked = $('#busca-category-'+categoria).is(':checked');
+                //Verifica os elementos filhos do bloco e se todos estão desmarcados fecha o bloco
+                var filhos = $('#bloco-'+categoria).find('.sub-category');
+                var todosDesmarcados = true;
+                filhos.each(function() {
+                    if ($(this).is(':checked')) {
+                        todosDesmarcados = false;
+                        return false; // Sai do loop se encontrar um checkbox marcado
+                    }
+                });
+                if (todosDesmarcados && !categoria_checked) {
+                    $('#bloco-'+categoria).addClass('d-none');
+                }
+            }
+        });
+
     }
 
 

@@ -6,6 +6,7 @@
 function sintropika_registra_menus() {
     register_nav_menus(array(
         'menu_principal' => __('Menu Principal', 'sintropika'),
+        //'submenu_temas' => __('Submenu Temas', 'sintropika'),
         'rodape_coluna_1' => __('Rodapé - Coluna 1', 'sintropika'),
         'rodape_coluna_2' => __('Rodapé - Coluna 2', 'sintropika'),
         'rodape_coluna_3' => __('Rodapé - Coluna 3', 'sintropika'),

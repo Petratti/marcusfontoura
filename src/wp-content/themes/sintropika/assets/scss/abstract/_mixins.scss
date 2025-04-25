@@ -7,7 +7,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xl);
     }
 }
@@ -15,11 +15,11 @@
 @mixin headline-default_02() {
     color: var(--color-neutral-black);
     font-family: var(--font-family-primary);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-lg);
     }
 }
@@ -31,7 +31,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-md);
     }
 }
@@ -43,7 +43,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-sm);
     }
 }
@@ -55,7 +55,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
     }
 }
@@ -67,7 +67,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxs);
     }
 }
@@ -81,7 +81,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-nano);
     //text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xl);
     }
 }
@@ -93,7 +93,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-nano);
     //text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-lg);
     }
 }
@@ -105,7 +105,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-nano);
     //text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-md);
     }
 }
@@ -117,7 +117,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-nano);
     //text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-sm);
     }
 }
@@ -129,7 +129,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-nano);
     //text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
     }
 }
@@ -141,7 +141,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-nano);
     //text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxs);
     }
 }
@@ -155,7 +155,7 @@
     font-weight: var(--font-weight-black);
     line-height: var(--line-height-default);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xl);
     }
 }
@@ -167,7 +167,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-default);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-lg);
     }
 }
@@ -179,7 +179,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-default);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-md);
     }
 }
@@ -191,7 +191,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-default);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-sm);
     }
 }
@@ -203,7 +203,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-default);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
     }
 }
@@ -215,7 +215,7 @@
     font-weight: var(--font-weight-extrabold);
     line-height: var(--line-height-default);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxs);
     }
 }
@@ -231,7 +231,7 @@
     line-height: var(--line-height-nano);
     letter-spacing: var(--letter-spacing-medium);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
     }
 }
@@ -244,7 +244,7 @@
     line-height: var(--line-height-nano);
     letter-spacing: var(--letter-spacing-medium);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxxs);
     }
 }
@@ -257,13 +257,13 @@
     line-height: var(--line-height-nano);
     letter-spacing: var(--letter-spacing-medium);
     text-transform: uppercase;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxxs);
     }
 }
 
 
-// BUTON //
+// BUTTON //
 
 @mixin button_01() {
     color: var(--color-neutral-black);
@@ -271,7 +271,7 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-default);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
     }
 }
@@ -282,7 +282,7 @@
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-default);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxs);
     }
 }
@@ -293,7 +293,7 @@
     font-size: var(--font-size-xxs);
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-default);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxxs);
     }
 }
@@ -307,7 +307,7 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-giant);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
     }
 }
@@ -318,7 +318,7 @@
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-giant);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxs);
     }
 }
@@ -329,7 +329,7 @@
     font-size: var(--font-size-xxs);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-giant);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxxs);
     }
 }
@@ -340,7 +340,7 @@
     font-size: var(--font-size-xxxs);
     font-weight: var(--font-weight-regular);
     line-height: var(--line-height-giant);
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxxs);
     }
 }
@@ -355,7 +355,7 @@
     font-weight: var(--font-weight-semibold);
     line-height: var(--line-height-giant);
     font-style: italic;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-sm);
         font-weight: var(--font-weight-regular);
     }
@@ -368,7 +368,7 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-giant);
     font-style: italic;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xs);
         font-weight: var(--font-weight-regular);
     }
@@ -381,64 +381,49 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-giant);
     font-style: italic;
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         font-size: var(--font-size-xxs);
         font-weight: var(--font-weight-regular);
     }
 }
 
 
-/// BUTTONS ///
-
-
-@mixin tab-item-large() {
-    //@include button-cta();
-    transition: 0.5s ease-out all;
-    display: flex;
-    height: 68px;
-    padding: var(--spacing-xl) var(--spacing-xs);
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-xs);
-    border-bottom: var(--border-width-medium) solid var(--color-neutral-light);
-    background: var(--color-neutral-soft);
-    color: var(--color-neutral-dark);
-    &:hover,
-    &:focus-visible {
-        border-bottom: var(--border-width-medium) solid var(--color-brand-primary-pure);
-        background: var(--color-brand-primary-pure);
-        color: var(--color-neutral-black);
-        position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: calc(50% - 2px);
-            width: 4px;
-            height: 12px;
-            background: var(--color-neutral-black);
-        }
-    }
-    &.active {
-        border-bottom: var(--border-width-medium) solid var(--color-brand-primary-pure);
-        background: var(--color-neutral-white);
-        color: var(--color-neutral-black);
-        position: relative;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: calc(50% - 2px);
-            width: 4px;
-            height: 12px;
-            background: var(--color-neutral-black);
-        }
-    }
-}
-
-
 
 /// MISC ///
+
+
+@mixin tab() {
+    @include button-01();
+    color: var(--color-neutral-dark);
+    transition: 0.5s ease-out all;
+    display: flex;
+    height: 80px;
+    padding: var(--spacing-xl) var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    &:hover,
+    &:focus-visible {
+        position: relative;
+        color: var(--color-neutral-black);
+    }
+    &.active {
+        position: relative;
+        color: var(--color-neutral-black);
+        //@media (min-width: 992px){
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 8px;
+                background: var(--color-neutral-black);
+            }
+        //}
+    }
+}
 
 @mixin tag-overline_01(){
     @include overline_03();

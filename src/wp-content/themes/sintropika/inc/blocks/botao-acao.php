@@ -28,5 +28,5 @@
 ?>
 
 <div class="-buttons">
-    <a href="<?=$link?>" <?php if($tipo == 'download' || ($tipo == 'link' && $nova_aba)):?>target="_blank"<?php endif;?> class="btn button-icon"><?=$icone?><?=$texto_botao?></a>
+    <a href="<?=$link?>" <?php if($tipo == 'download' || ($tipo == 'link' && $nova_aba)):?>target="_blank"<?php endif;?> class="btn button-cta"><?=$texto_botao?><?=$icone?></a>
 </div>

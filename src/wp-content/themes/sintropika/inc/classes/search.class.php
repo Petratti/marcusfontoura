@@ -150,6 +150,12 @@ class SEARCH {
                         } else {
                             $categoriasArray[] = $categoria->name;
                         }
+                        //se não tiver parent
+                        if($categoria->parent == 0) {
+                            if(!$corTema) {
+                                $corTema = corTema($categoria->slug);
+                            }
+                        }
                     }
                 }
                 $imagem = get_the_post_thumbnail_url(get_the_ID(), 'medium' );
@@ -169,12 +175,13 @@ class SEARCH {
                 }
                 $titulo = get_the_title();
                 $resumo = get_the_excerpt();
-                //$cta  = 'Leia mais';
+                $cta  = 'Acessar';
                 $permalink = get_the_permalink();
+                $proporcao_da_thumb = get_field('proporcao_da_thumb', get_the_ID());
                 if($this->tipo == 'busca'){
                     $html_content .= '<div class="col-lg-12 card-content-js">';
                 } else {
-                    $html_content .= '<div class="col-lg-4 card-content-js">';
+                    $html_content .= '<div class="col-lg-4 col-md-6 card-content-js">';
                 }
                     ob_start();
                     if($this->tipo == 'busca'){
@@ -266,6 +273,10 @@ class SEARCH {
 
     public function get_search() {
         return $this->search;
+    }
+
+    public function get_args() {
+        return $this->args;
     }
 
 

@@ -3,15 +3,17 @@ $(document).ready(function(){
     //se existir o elemento .form-search .input-search e for mobile trocar placeholder
     if($('.form-search .input-search').length) {
         if ($(window).width() < 992) {
-            $('.form-search .input-search').attr('placeholder', 'Pesquisar...');
+            $('.form-search .input-search').attr('placeholder', 'Pesquise');
         }
     }
 
     if($('#top').length){
         $(window).scroll(function(){
             var scroll = $(window).scrollTop();
-            if(scroll > 700){
+            if(scroll > 100){
                 $('#top').addClass('show');
+            }else{
+                $('#top').removeClass('show');
             }
         });
     }

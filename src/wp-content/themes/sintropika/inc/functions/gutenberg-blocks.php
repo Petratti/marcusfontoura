@@ -69,7 +69,8 @@ function wpdocs_allowed_block_types( $allowed_blocks, $editor_context ) {
             //'core-embed/tumblr',
             //'core-embed/videopress',
             //'core-embed/wordpress-tv',
-            'acf/botao-acao'
+            'acf/botao-acao',
+            'acf/lista-destacada'
         );
     }
 }
@@ -94,6 +95,20 @@ function my_acf_init_block_types() {
             'category'          => 'formatting',
             'icon'              => 'button',
             'keywords'          => array( 'botao-acao', 'box' ),
+            'mode'              => 'edit',
+            'category'          => 'custom-blocks',
+        ));
+
+        // lista destacada
+        acf_register_block_type(array(
+            'name'              => 'lista-destacada',
+            'title'             => __('Lista destacada'),
+            'description'       => __('Bloco de Lista destacada'),
+            'render_template'   => 'inc/blocks/lista-destacada.php',
+            //'enqueue_style'     =>  get_template_directory_uri() .'/template-parts/blocks/bootstrap/css/bootstrap.min.css',
+            'category'          => 'formatting',
+            'icon'              => 'ellipsis',
+            'keywords'          => array( 'lista-destacada', 'box' ),
             'mode'              => 'edit',
             'category'          => 'custom-blocks',
         ));

@@ -24,7 +24,7 @@ if($thumbnail_id) {
 
 <main id="main">
 
-<section id="hero">
+    <section id="hero">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -61,7 +61,7 @@ if($thumbnail_id) {
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </section>
     </section>
 
