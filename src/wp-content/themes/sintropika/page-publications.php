@@ -12,6 +12,8 @@
     //pegar alt da imagem destacada
     $altImagemDestacada = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
 
+    $aba1Titulo = get_field('aba_1_titulo');
+    $aba2Titulo = get_field('aba_2_titulo');
     $blocos1 = get_field('blocos');
     $blocos2 = get_field('blocos_2');
 ?>
@@ -32,8 +34,8 @@
 
     <div class="container">
         <nav class="nav nav-pills nav-justified" id="myTab" role="tablist">
-            <a class="nav-link active" href="#" id="tab01" data-bs-toggle="tab" data-bs-target="#content01" type="button" role="tab" aria-controls="content01" aria-selected="true">Selected contributions by area</a>
-            <a class="nav-link" href="#" id="tab02" data-bs-toggle="tab" data-bs-target="#content02" type="button" role="tab" aria-controls="content02" aria-selected="false">All publications</a>
+            <a class="nav-link active" href="#" id="tab01" data-bs-toggle="tab" data-bs-target="#content01" type="button" role="tab" aria-controls="content01" aria-selected="true"><?=$aba1Titulo?></a>
+            <a class="nav-link" href="#" id="tab02" data-bs-toggle="tab" data-bs-target="#content02" type="button" role="tab" aria-controls="content02" aria-selected="false"><?=$aba2Titulo?></a>
         </nav>
     </div>
 

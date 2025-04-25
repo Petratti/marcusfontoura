@@ -12,8 +12,10 @@
     //pegar alt da imagem destacada
     $altImagemDestacada = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true);
 
+    $botoesHero = get_field('botoes_hero');
     $introducao = get_field('introducao');
     $blocoDepoimentos = get_field('depoimentos');
+    $livros = get_field('livros');
 ?>
 
 <main id="main">
@@ -33,8 +35,8 @@
                     <div class="columns">
                         <?php the_content(); ?>
                         <div class="buttons">
-                            <a href="#" class="btn button-cta-alternative">Buy English edition</a>
-                            <a href="#" class="btn button-cta-alternative">Buy Portuguese edition</a>
+                            <a href="<?=$botoesHero['botao_1']['url']?>" class="btn button-cta-alternative"><?=$botoesHero['botao_1']['title']?></a>
+                            <a href="<?=$botoesHero['botao_2']['url']?>" class="btn button-cta-alternative"><?=$botoesHero['botao_2']['title']?></a>
                         </div>
                     </div>
                 </div>
@@ -111,28 +113,28 @@
                             <div class="line"></div>
                         </div>
                         <header>
-                            <h2>Now available</h2>
+                            <h2><?=$livros['titulo']?></h2>
                         </header>
                         <div class="columns">
                             <div class="left">
                                 <div class="-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/books-available-01.png" alt="Tecnologia Intencional" class="img-fluid" />
+                                    <img src="<?=$livros['itens'][0]['imagem']['url']?>" alt="<?=$livros['itens'][0]['imagem']['alt']?>" class="img-fluid" />
                                 </div>
                                 <div class="body">
-                                    <h3>A Platform Mindset</h3>
-                                    <p>Building a Culture of Collaboration</p>
+                                    <h3><?=$livros['itens'][0]['titulo']?></h3>
+                                    <p><?=$livros['itens'][0]['texto']?></p>
                                 </div>
-                                <a href="#" class="btn button-cta-alternative">Buy now</a>
+                                <a href="<?=$livros['itens'][0]['botao']['url']?>" class="btn button-cta-alternative"><?=$livros['itens'][0]['botao']['title']?></a>
                             </div>
                             <div class="right">
                                 <div class="-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/books-available-02.png" alt="Tecnologia Intencional" class="img-fluid" />
+                                    <img src="<?=$livros['itens'][1]['imagem']['url']?>" alt="<?=$livros['itens'][0]['imagem']['alt']?>" class="img-fluid" />
                                 </div>
                                 <div class="body">
-                                    <h3>Tecnologia Intencional</h3>
-                                    <p>Como Artistas, Bicicletas e Cavalos Transformam Carreiras e Negócios</p>
+                                    <h3><?=$livros['itens'][1]['titulo']?></h3>
+                                    <p><?=$livros['itens'][1]['titulo']?></p>
                                 </div>
-                                <a href="#" class="btn button-cta-alternative">Buy now</a>
+                                <a href="<?=$livros['itens'][1]['botao']['url']?>" class="btn button-cta-alternative"><?=$livros['itens'][1]['botao']['title']?></a>
                             </div>
                         </div>
                     </div>

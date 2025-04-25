@@ -136,6 +136,9 @@
                                 @include body-default_01();
                                 text-align: center;
                                 margin-bottom: 0;
+                                a {
+                                    color: var(--color-brand-primary-pure);
+                                }
                             }
                         }
                         .btn {

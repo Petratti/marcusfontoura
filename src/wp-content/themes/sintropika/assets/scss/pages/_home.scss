@@ -114,6 +114,9 @@
                     }
                     p {
                         @include body-default_01();
+                        a {
+                            color: var(--color-brand-primary-pure);
+                        }
                     }
                     .btn {
                         margin-top: var(--spacing-xxxl);
@@ -142,7 +145,7 @@
                 .columns {
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
+                    align-items: flex-start;
                     gap: var(--spacing-huge);
                     @media (max-width: 991px){
                         flex-direction: column;
@@ -158,6 +161,9 @@
                     }
                     p {
                         @include body-default_01();
+                        a {
+                            color: var(--color-brand-primary-pure);
+                        }
                     }
                     .btn {
                         margin-top: var(--spacing-xxxl);
@@ -187,7 +193,7 @@
                 .columns {
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
+                    align-items: flex-start;
                     gap: var(--spacing-huge);
                     @media (max-width: 991px){
                         flex-direction: column;
@@ -203,6 +209,9 @@
                     }
                     p {
                         @include body-default_01();
+                        a {
+                            color: var(--color-brand-primary-pure);
+                        }
                     }
                     .btn {
                         margin-top: var(--spacing-xxxl);
@@ -243,7 +252,7 @@
                 .columns {
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
+                    align-items: flex-start;
                     gap: var(--spacing-huge);
                     margin-bottom: var(--spacing-xxl);
                     @media (max-width: 991px){
@@ -260,6 +269,9 @@
                     }
                     p {
                         @include body-default_01();
+                        a {
+                            color: var(--color-brand-primary-pure);
+                        }
                     }
                     .btn {
                         margin-top: var(--spacing-xxxl);

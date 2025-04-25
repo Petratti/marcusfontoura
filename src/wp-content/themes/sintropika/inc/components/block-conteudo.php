@@ -31,7 +31,42 @@
                     $tags = $bloco['tags'];
                 ?>
                     <div class="coluna <?=$colunaClass?>">
-                        <?=$item['item']['conteudo']?>
+                        <?php 
+                        $conteudo = $item['item']['conteudo'];
+                        $conteudo = preg_replace_callback(
+                            '#<a\s+href="([^"]+)">\s*\(pdf\)\s*</a>#i',
+                            function ($matches) {
+                                $href = $matches[1];
+                                return '<a href="' . $href . '" target="_blank" class="tag pdf">PDF</a>';
+                            },
+                            $conteudo
+                        );
+                        $conteudo = preg_replace_callback(
+                            '#<a\s+href="([^"]+)">\s*\(slides\)\s*</a>#i',
+                            function ($matches) {
+                                $href = $matches[1];
+                                return '<a href="' . $href . '" target="_blank" class="tag slides">SLIDES</a>';
+                            },
+                            $conteudo
+                        );
+                        $conteudo = preg_replace_callback(
+                            '#<a\s+href="([^"]+)">\s*\(paper\)\s*</a>#i',
+                            function ($matches) {
+                                $href = $matches[1];
+                                return '<a href="' . $href . '" target="_blank" class="tag link">PAPER</a>';
+                            },
+                            $conteudo
+                        );
+                        $conteudo = preg_replace_callback(
+                            '#<a\s+href="([^"]+)">\s*\(Web publication\)\s*</a>#i',
+                            function ($matches) {
+                                $href = $matches[1];
+                                return '<a href="' . $href . '" target="_blank" class="tag link">LINK</a>';
+                            },
+                            $conteudo
+                        );
+                        echo $conteudo;
+                        ?>
                         <?php
                         //remove a tag <p> do conteudo
                         /* $conteudo = $item['item']['conteudo'];
