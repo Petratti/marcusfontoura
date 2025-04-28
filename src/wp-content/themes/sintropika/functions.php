@@ -66,7 +66,7 @@ require_once get_template_directory() . '/inc/functions/iframe.php';
  * Configurações do WPML
  */
 
-//require_once get_template_directory(). '/inc/functions/wpml.php';
+require_once get_template_directory(). '/inc/functions/wpml.php';
 
 /**
  * Funções de busca por conteudos do site

@@ -284,6 +284,9 @@
         justify-content: center;
         align-items: center;
         gap: var(--spacing-xxs);
+        padding: var(--spacing-xs) var(--spacing-sm) !important;
+        border-radius: var(--border-radius-pill) !important;
+        background: var(--color-neutral-black);
     }
 
     &.button-menu {

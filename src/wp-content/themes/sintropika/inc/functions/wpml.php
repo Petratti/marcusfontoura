@@ -13,19 +13,19 @@ function custom_language_switcher($screen) {
                 $tag = "pt";
             }
             if( $language['active'] ) :
-                $active = "-active";
+                $active = "active";
             else :
                 $active = "";
             endif;
             if($screen == "desktop"):
                 echo '<li>';
-                echo '<a href="' . esc_url( $language['url'] ) . '" class="'.$active.'">';
+                echo '<a href="' . esc_url( $language['url'] ) . '" class="btn button-drop '.$active.'">';
                 echo esc_html( strtoupper($tag) );
                 echo '</a>';
                 echo '</li>';
             else:
                 echo '<li>';
-                echo '<a href="' . esc_url( $language['url'] ) . '" class="'.$active.'">';
+                echo '<a href="' . esc_url( $language['url'] ) . '" class="btn button-drop '.$active.'">';
                 echo esc_html( strtoupper($tag) );
                 echo '</a>';
                 echo '</li>';
