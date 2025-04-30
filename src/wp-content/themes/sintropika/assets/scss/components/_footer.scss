@@ -89,6 +89,9 @@
                         }
                     }
                 }
+                .buttons {
+                    gap: var(--spacing-md);
+                }
                 .btn.-social{
                     padding: 0;
                     i {
