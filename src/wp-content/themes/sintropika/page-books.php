@@ -35,8 +35,8 @@
                     <div class="columns">
                         <?php the_content(); ?>
                         <div class="buttons">
-                            <a href="<?=$botoesHero['botao_1']['url']?>" class="btn button-cta-alternative"><?=$botoesHero['botao_1']['title']?></a>
-                            <a href="<?=$botoesHero['botao_2']['url']?>" class="btn button-cta-alternative"><?=$botoesHero['botao_2']['title']?></a>
+                            <a href="<?=$botoesHero['botao_1']['url']?>" target="<?=$botoesHero['botao_1']['target']?>" class="btn button-cta-alternative"><?=$botoesHero['botao_1']['title']?></a>
+                            <a href="<?=$botoesHero['botao_2']['url']?>" target="<?=$botoesHero['botao_2']['target']?>" class="btn button-cta-alternative"><?=$botoesHero['botao_2']['title']?></a>
                         </div>
                     </div>
                 </div>
