@@ -57,7 +57,10 @@
                                 <div class="-img d-lg-none">
                                     <img src="<?=$books['imagem']['url']?>" alt="<?=$books['imagem']['alt']?>" class="img-fluid" />
                                 </div>
-                                <a href="<?=$books['botao']['url']?>" class="btn button-cta-alternative"><?=$books['botao']['title']?></a>
+                                <div class="buttons">
+                                    <a href="<?=$books['botao']['url']?>" target="<?=$books['botao']['target']?>" class="btn button-ghost"><?=$books['botao']['title']?></a>
+                                    <a href="<?=$books['botao_2']['url']?>" target="<?=$books['botao_2']['target']?>" class="btn button-cta-alternative"><?=$books['botao_2']['title']?></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,11 +80,11 @@
                             <div class="left">
                                 <h2><?=$resume['titulo']?></h2>
                                 <?=$resume['texto']?>
-                                <a href="<?=$resume['botao']['url']?>" class="btn button-cta-alternative d-none d-lg-flex"><?=$resume['botao']['title']?></a>
+                                <a href="<?=$resume['botao']['url']?>" target="<?=$resume['botao']['target']?>" class="btn button-cta-alternative d-none d-lg-flex"><?=$resume['botao']['title']?></a>
                             </div>
                             <div class="right">
                                 <?=$resume['texto_2']?>
-                                <a href="<?=$resume['botao']['url']?>" class="btn button-cta-alternative d-lg-none"><?=$resume['botao']['title']?></a>
+                                <a href="<?=$resume['botao']['url']?>" target="<?=$resume['botao']['target']?>" class="btn button-cta-alternative d-lg-none"><?=$resume['botao']['title']?></a>
                             </div>
                         </div>
                     </div>
@@ -101,11 +104,11 @@
                             <div class="left">
                                 <h2><?=$publications['titulo']?></h2>
                                 <?=$publications['texto']?>
-                                <a href="<?=$publications['botao']['url']?>" class="btn button-cta-alternative d-none d-lg-flex"><?=$publications['botao']['title']?></a>
+                                <a href="<?=$publications['botao']['url']?>" target="<?=$publications['botao']['target']?>" class="btn button-cta-alternative d-none d-lg-flex"><?=$publications['botao']['title']?></a>
                             </div>
                             <div class="right">
                                 <?=$publications['texto_2']?>
-                                <a href="<?=$publications['botao']['url']?>" class="btn button-cta-alternative d-lg-none"><?=$publications['botao']['title']?></a>
+                                <a href="<?=$publications['botao']['url']?>" target="<?=$publications['botao']['target']?>" class="btn button-cta-alternative d-lg-none"><?=$publications['botao']['title']?></a>
                             </div>
                         </div>
                     </div>
@@ -123,11 +126,11 @@
                         <div class="columns">
                             <div class="left">
                                 <h2><?=$platform['titulo']?></h2>
-                                <a href="<?=$platform['botao']['url']?>" class="btn button-cta-alternative d-none d-lg-flex"><?=$platform['botao']['title']?></a>
+                                <a href="<?=$platform['botao']['url']?>" target="<?=$platform['botao']['target']?>" class="btn button-cta-alternative d-none d-lg-flex"><?=$platform['botao']['title']?></a>
                             </div>
                             <div class="right">
                                 <?=$platform['texto']?>
-                                <a href="<?=$platform['botao']['url']?>" class="btn button-cta-alternative d-lg-none"><?=$platform['botao']['title']?></a>
+                                <a href="<?=$platform['botao']['url']?>" target="<?=$platform['botao']['target']?>" class="btn button-cta-alternative d-lg-none"><?=$platform['botao']['title']?></a>
                             </div>
                         </div>
                     </div>

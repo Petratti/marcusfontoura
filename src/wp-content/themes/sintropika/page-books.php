@@ -124,7 +124,7 @@
                                     <h3><?=$livros['itens'][0]['titulo']?></h3>
                                     <p><?=$livros['itens'][0]['texto']?></p>
                                 </div>
-                                <a href="<?=$livros['itens'][0]['botao']['url']?>" class="btn button-cta-alternative"><?=$livros['itens'][0]['botao']['title']?></a>
+                                <a href="<?=$livros['itens'][0]['botao']['url']?>" target="<?=$livros['itens'][0]['botao']['target']?>" class="btn button-cta-alternative"><?=$livros['itens'][0]['botao']['title']?></a>
                             </div>
                             <div class="right">
                                 <div class="-img">
@@ -134,7 +134,7 @@
                                     <h3><?=$livros['itens'][1]['titulo']?></h3>
                                     <p><?=$livros['itens'][1]['titulo']?></p>
                                 </div>
-                                <a href="<?=$livros['itens'][1]['botao']['url']?>" class="btn button-cta-alternative"><?=$livros['itens'][1]['botao']['title']?></a>
+                                <a href="<?=$livros['itens'][1]['botao']['url']?>" target="<?=$livros['itens'][1]['botao']['target']?>" class="btn button-cta-alternative"><?=$livros['itens'][1]['botao']['title']?></a>
                             </div>
                         </div>
                     </div>

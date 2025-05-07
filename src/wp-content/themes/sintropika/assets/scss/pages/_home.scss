@@ -118,10 +118,17 @@
                             color: var(--color-brand-primary-pure);
                         }
                     }
-                    .btn {
+                    .buttons {
                         margin-top: var(--spacing-xxxl);
+                        display: flex;
+                        flex-direction: column;
+                        gap: var(--spacing-lg);
                         @media (max-width: 991px){
-                            width: 100%;
+                        }
+                        .btn {
+                            @media (max-width: 991px){
+                                width: 100%;
+                            }
                         }
                     }
                     .left {
